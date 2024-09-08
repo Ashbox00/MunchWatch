@@ -10,23 +10,23 @@ fetch("https://api.cgwe.st/recommended",{
         let id = vid[0];
         let count = vid[1];
         let title = vid[2];
-        let image = new Image();
-        image.src = vid[3];
+        let image = vid[3];
+       
 
         const row = table.insertRow();
         const urlEl = row.insertCell();
         var div = document.createElement('div');
-        var imgdiv = document.createElement('div');
+        var imgdiv = document.createElement('img');
         imgdiv.src = image
-        imgdiv.width = 50;
-        imgdiv.height  = 50;
+        imgdiv.width = 150;
+        imgdiv.height  = 100;
         var txtdiv = document.createElement('div');
         div.appendChild(imgdiv);
-        imgdiv.appendChild(image)
+        
         
         div.appendChild(txtdiv);
         txtdiv.innerHTML = `<a href="#">${title}</a>`;
-        div.style.width= "60%";
+        
 
 
         urlEl.appendChild(div);
