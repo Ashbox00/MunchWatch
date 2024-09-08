@@ -1,0 +1,20 @@
+{
+    "manifest_version" : 3,
+    "name" : "WATCHMUNCH",
+    "description" : "We make a list of all the videos that people love to watch when they eat. We then give you those videos so you can have an amazing time eating your amazing meal.",
+    "version" : "1.0",
+    "action" : {
+        "default_popup" : "watchmunch.html",
+        "default_icon" : "pngs/watchmunch16-16.png"
+    },
+    "host_permissions": ["https://api.cgwe.st/"],
+    "content_scripts" : [
+        {
+            "js" : ["scripts/button.js"],
+            
+            "matches" : ["*://*.youtube.com/watch*" ],
+            "run_at" : "document_start"
+        }
+    ]
+
+}
